@@ -1,0 +1,40 @@
+name: 'Semantic release'
+description: 'Create a semantic release without choking on registry configs'
+inputs:
+  branches:
+    required: false
+    description: 'The branches on which releases should happen. It will override the branches attribute in your configuration file. Support for semantic-release above v16. See https://semantic-release.gitbook.io/semantic-release/usage/configuration#branches for more information.'
+  branch:
+    required: false
+    description: 'The branch on which releases should happen. It will override the branch attribute in your configuration file. If the attribute is not configured on both sides, the default is master. Support for semantic-release older than v16.'
+  dry_run:
+    required: false
+    description: 'Whether to run semantic release in `dry-run` mode. It will override the dryRun attribute in your configuration file'
+  extends:
+    required: false
+    description: 'One or several sharable configurations, https://semantic-release.gitbook.io/semantic-release/usage/configuration#extends'
+  # Custom fields for this fork:
+  registry:
+    required: false
+    description: 'Override the registry to publish to e.g. npm.pkg.github.com instead of registry.npmjs.com'
+  npm_publish:
+    required: false
+    description: 'Whether to run npm publish as part of semantic-release (default false). Enable to publish package.'
+outputs:
+  new_release_published:
+    description: 'Whether a new release was published'
+  new_release_version:
+    description: 'Version of the new release'
+  new_release_major_version:
+    description: 'Major version of the new release'
+  new_release_minor_version:
+    description: 'Minor version of the new release'
+  new_release_patch_version:
+    description: 'Patch version of the new release'
+  new_release_channel:
+    description: 'The distribution channel on which the last release was initially made available (undefined for the default distribution channel).'
+  new_release_notes:
+    description: 'The release notes for the new release.'
+runs:
+  using: 'node12'
+  main: 'index.js'
