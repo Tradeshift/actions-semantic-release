@@ -1,0 +1,26 @@
+{
+	"name": "@tradeshift/actions-semantic-release",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo derp",
+		"validate": "echo valid!"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tradeshift/actions-semantic-release.git"
+	},
+	"keywords": [],
+	"author": "Jacob Wejendorp <jwe@tradeshift.com>",
+	"bugs": {
+		"url": "https://github.com/tradeshift/actions-semantic-release/issues"
+	},
+	"homepage": "https://github.com/tradeshift/actions-semantic-release#readme",
+	"dependencies": {
+		"@actions/core": "^1.2.6",
+		"@actions/exec": "^1.0.4",
+		"@actions/github": "^4.0.0",
+		"semantic-release": "^17.3.0"
+	}
+}
