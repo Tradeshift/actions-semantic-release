@@ -75,7 +75,9 @@ const updateStatus = async (/** @type {Result} */ result) => {
 	let summary =
 		'No new release will be published. Add some [conventional commits](https://www.conventionalcommits.org/) to ';
 	if (result && result.nextRelease) {
-		title = `${result.nextRelease.type} release`;
+		title = `${result.nextRelease.type.replace(/^./, (s) =>
+			s.toUpperCase()
+		)} release (${result.nextRelease.version})`;
 		summary = [
 			`Found the following [conventional commits](https://www.conventionalcommits.org/) to trigger a ${result.nextRelease.type} release.`,
 			result.nextRelease.notes,
