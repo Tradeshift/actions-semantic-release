@@ -79,7 +79,7 @@ const updateStatus = async (/** @type {Result} */ result) => {
 
 	let title = 'No new release';
 	let summary =
-		'No new release will be published. Add some [conventional commits](https://www.conventionalcommits.org/) to ';
+		'No new release will be published. Add some [conventional commits](https://www.conventionalcommits.org/) to trigger a release.';
 	if (result && result.nextRelease) {
 		title = `${result.nextRelease.type.replace(/^./, (s) =>
 			s.toUpperCase()
