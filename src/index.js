@@ -30,6 +30,12 @@ const release = async () => {
 		core.getInput(inputs.registry) || 'https://registry.npmjs.com/';
 
 	process.env.NPM_CONFIG_REGISTRY = registry;
+	// remap NODE_AUTH_TOKEN to NPM_TOKEN, in case action runs without
+	// the actions/setup-node step before it.
+	if (process.env.NODE_AUTH_TOKEN && !process.env.NPM_TOKEN) {
+		process.env.NPM_TOKEN = process.env.NODE_AUTH_TOKEN;
+	}
+
 	const result = await semanticRelease({
 		...handleBranchesOption(),
 		...handleDryRunOption(),
