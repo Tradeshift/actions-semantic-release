@@ -1,11 +1,10 @@
-
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: "actions-semantic-release"
+  name: 'actions-semantic-release'
   github.com/project-slug: Tradeshift/actions-semantic-release
 spec:
   type: other
-  lifecycle: experimental
-  owner: "partner-enablement-and-apps"
-  system: ""
+  lifecycle: production
+  owner: 'developer-productivity'
+  system: ''
