@@ -77,15 +77,16 @@ const updateStatus = async (/** @type {Result} */ result) => {
 		core.debug('Could not get PR sha, using env.GITHUB_SHA for status');
 	}
 
+	const linkToCommitStyle =
+		'[conventional](https://www.conventionalcommits.org/) [commits](https://github.com/semantic-release/semantic-release#how-does-it-work)';
 	let title = 'No new release';
-	let summary =
-		'No new release will be published. Add some [conventional commits](https://www.conventionalcommits.org/) to ';
+	let summary = `No new release will be published. Add some ${linkToCommitStyle} if you intend to release these changes.`;
 	if (result && result.nextRelease) {
 		title = `${result.nextRelease.type.replace(/^./, (s) =>
 			s.toUpperCase()
 		)} release (${result.nextRelease.version})`;
 		summary = [
-			`Found the following [conventional commits](https://www.conventionalcommits.org/) to trigger a ${result.nextRelease.type} release.`,
+			`Found the following ${linkToCommitStyle} to trigger a ${result.nextRelease.type} release.`,
 			result.nextRelease.notes,
 		].join('\n\n');
 	}

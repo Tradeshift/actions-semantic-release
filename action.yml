@@ -20,6 +20,9 @@ inputs:
   npm_publish:
     required: false
     description: 'Whether to run npm publish as part of semantic-release (default false). Enable to publish package.'
+  check_name:
+    required: false
+    description: 'Will post changelog under this check name if set. Useful w/ dry_run / PRs.'
 outputs:
   new_release_published:
     description: 'Whether a new release was published'
