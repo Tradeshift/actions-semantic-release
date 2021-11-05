@@ -1,5 +1,6 @@
+const fs = require('fs');
+const path = require('path');
 const core = require('@actions/core');
-const exec = require('@actions/exec');
 const github = require('@actions/github');
 const {
 	handleBranchesOption,
@@ -29,6 +30,24 @@ const release = async () => {
 	const registry =
 		core.getInput(inputs.registry) || 'https://registry.npmjs.com/';
 
+	/** @type {(string | [string, any])[]} */
+	const plugins = [
+		'@semantic-release/commit-analyzer',
+		'@semantic-release/release-notes-generator',
+		'@semantic-release/github',
+	];
+	// only use npm plugin if there is a package.json, or if publish flag is on
+	if (
+		fs.existsSync(path.join(process.env.GITHUB_WORKSPACE, 'package.json')) ||
+		npmPublish
+	) {
+		plugins.push([
+			'@semantic-release/npm',
+			{
+				npmPublish,
+			},
+		]);
+	}
 	process.env.NPM_CONFIG_REGISTRY = registry;
 	// remap NODE_AUTH_TOKEN to NPM_TOKEN, in case action runs without
 	// the actions/setup-node step before it.
@@ -40,17 +59,7 @@ const release = async () => {
 		...handleBranchesOption(),
 		...handleDryRunOption(),
 		...handleExtends(),
-		plugins: [
-			'@semantic-release/commit-analyzer',
-			'@semantic-release/release-notes-generator',
-			[
-				'@semantic-release/npm',
-				{
-					npmPublish,
-				},
-			],
-			'@semantic-release/github',
-		],
+		plugins,
 	});
 
 	await collectOutput(result);
