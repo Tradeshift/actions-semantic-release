@@ -25,15 +25,6 @@ steps:
     uses: tradeshift/actions-semantic-release@v1
     id: semantic-release
     with:
-      branches: |
-        [
-          '+([0-9])?(.{+([0-9]),x}).x',
-          'master',
-          'next',
-          'next-major',
-          {name: 'beta', prerelease: true},
-          {name: 'alpha', prerelease: true}
-        ]
       registry: https://npm.pkg.github.com/
       npm_publish: true
     env:
@@ -46,15 +37,6 @@ steps:
   - name: 🚀 Dry run release
     uses: tradeshift/actions-semantic-release@v1
     with:
-      branches: |
-        [
-          '+([0-9])?(.{+([0-9]),x}).x',
-          'master',
-          'next',
-          'next-major',
-          {name: 'beta', prerelease: true},
-          {name: 'alpha', prerelease: true}
-        ]
       registry: https://npm.pkg.github.com/
       # Dry run and publish the changelog as a Check
       dry_run: true
