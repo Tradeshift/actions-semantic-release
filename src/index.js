@@ -100,7 +100,7 @@ const updateStatus = async (/** @type {Result} */ result) => {
 		].join('\n\n');
 	}
 
-	await octokit.checks.create({
+	await octokit.rest.checks.create({
 		owner: gitHubRepoOwner,
 		repo: gitHubRepoName,
 		name: checkName,
