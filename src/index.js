@@ -156,5 +156,8 @@ const collectOutput = async (result) => {
 
 module.exports = () => {
 	core.debug('Initialization successful');
-	release().catch(core.setFailed);
+	release().catch((err) => {
+		console.error(err);
+		core.setFailed('Failed to run semantic-release');
+	});
 };
