@@ -13,7 +13,7 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
           registry-url: 'https://npm.pkg.github.com'
           cache: 'npm'
 
@@ -37,7 +37,7 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
           registry-url: 'https://npm.pkg.github.com'
           cache: 'npm'
 

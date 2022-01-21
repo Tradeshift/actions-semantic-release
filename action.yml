@@ -39,5 +39,5 @@ outputs:
   new_release_notes:
     description: 'The release notes for the new release.'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
