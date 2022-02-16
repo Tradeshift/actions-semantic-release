@@ -3,6 +3,9 @@ kind: Component
 metadata:
   name: 'actions-semantic-release'
   github.com/project-slug: Tradeshift/actions-semantic-release
+  tags:
+    - github-action
+    - nodejs
 spec:
   type: other
   lifecycle: production
