@@ -19,7 +19,7 @@
 	"dependencies": {
 		"@actions/core": "^1.6.0",
 		"@actions/exec": "^1.0.4",
-		"@actions/github": "^5.0.0",
+		"@actions/github": "^5.0.2",
 		"semantic-release": "^19.0.2"
 	},
 	"devDependencies": {
