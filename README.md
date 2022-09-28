@@ -1,6 +1,6 @@
 # @tradeshift/actions-semantic-release
 
-Awesome TEST
+Awesomer TEST
 
 This is a fork of
 [cycjimmy/semantic-release-action](https://github.com/cycjimmy/semantic-release-action)
