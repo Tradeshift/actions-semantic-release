@@ -1,5 +1,7 @@
 # @tradeshift/actions-semantic-release
 
+Bestest demo!
+
 This is a fork of
 [cycjimmy/semantic-release-action](https://github.com/cycjimmy/semantic-release-action)
 with fixed `semantic-release` version and custom `semantic-release` config to
