@@ -3,7 +3,7 @@
         "Build and test"
     ],
     "maintainers": [
-        "Developer productivity"
+        "developer-productivity"
     ],
     "topics": [
         "github-action",
