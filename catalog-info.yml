@@ -9,4 +9,4 @@ metadata:
 spec:
   type: other
   lifecycle: production
-  owner: 'developer-productivity'
+  owner: 'sre'
