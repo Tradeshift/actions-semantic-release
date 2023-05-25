@@ -3,5 +3,12 @@
   "extends": [
     "Tradeshift/renovate-config:config-github-action",
     "local>Tradeshift/renovate-config:automerge-dev-deps"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["semantic-release"],
+      "matchManagers": ["npm"],
+      "enabled": false
+    }
   ]
 }
