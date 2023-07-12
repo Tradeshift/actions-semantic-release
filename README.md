@@ -27,6 +27,7 @@ steps:
     with:
       registry: https://npm.pkg.github.com/
       npm_publish: true
+      working_directory: ./subdir
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
