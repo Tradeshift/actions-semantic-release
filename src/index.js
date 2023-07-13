@@ -27,6 +27,9 @@ const release = async () => {
     process.env.GITHUB_EVENT_NAME = "totally-not-a-pr";
     process.env.GITHUB_REF = "master";
   }
+  if (core.getInput(inputs.working_directory)) {
+    process.chdir(core.getInput(inputs.working_directory));
+  }
   const npmPublish = core.getInput(inputs.npm_publish) === "true";
   const registry =
     core.getInput(inputs.registry) || "https://registry.npmjs.com/";

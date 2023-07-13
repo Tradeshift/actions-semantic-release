@@ -23,6 +23,9 @@ inputs:
   check_name:
     required: false
     description: 'Will post changelog under this check name if set. Useful w/ dry_run / PRs.'
+  working_directory:
+    required: false
+    description: 'Specify another working directory for semantic release. Default one is provided by github.'
 outputs:
   new_release_published:
     description: 'Whether a new release was published'

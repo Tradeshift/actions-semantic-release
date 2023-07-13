@@ -6,4 +6,5 @@ export default {
   registry: "registry",
   npm_publish: "npm_publish",
   check_name: "check_name",
+  working_directory: "working_directory"
 };
