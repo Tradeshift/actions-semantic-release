@@ -24,7 +24,7 @@
     "semantic-release": "20.1.0"
   },
   "devDependencies": {
-    "@types/node": "20.11.28",
+    "@types/node": "20.11.29",
     "typescript": "5.4.2"
   }
 }
